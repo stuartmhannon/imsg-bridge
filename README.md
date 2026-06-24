@@ -78,6 +78,13 @@ The bridge runs as a **dedicated macOS user** with its own Apple ID signed into 
 - Automation permission is required for sending. Without it, `imsg send` returns exit 0 but the message never departs.
 - The watch file grows unbounded. Your agent should call `/clear-watch` after processing new messages.
 
+## Built With
+
+- **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** — The agent framework this runs on. Cron-driven autonomous operation, tool-use, and subagent delegation.
+- **[ponytail](https://github.com/DietrichGebert/ponytail)** — Made the bridge ~54% smaller by cutting dead code, redundant pollers, and unnecessary CORS headers. Lazy senior dev methodology.
+- **[Holographic Memory](https://github.com/NousResearch/hermes-agent)** — Local SQLite+FTS5 fact store that remembers user preferences, system state, and session history across restarts.
+- **[imsg](https://github.com/steipete/imsg)** — The CLI that bridges to macOS Messages.app private frameworks. The foundation this whole thing sits on.
+
 ## License
 
 MIT
